@@ -1,3 +1,4 @@
+import cv2
 from picamera import PiCamera
 from time import sleep
 
@@ -9,9 +10,13 @@ camera.resolution=(2592,1944)
 #although by default it changes as per the screen resolution
 
 camera.start_preview()
-for i in range(100):
-    sleep(.1)
-    camera.annotate_text="brightness=%s" % i
-    camera.brightness=i
-    camera.capture('/home/pi/Desktop/brightness/level%s.jpg' % i)
+#while True :
+for i in range(1,100):
+   	sleep(.1)
+    	camera.annotate_text="brightness=%s" % i
+       	camera.brightness=i
+#	if cv2.waitKey(25) & 0xFF==ord('q'):
+#		break
+#
+camera.capture('/home/pi/Desktop/brightness/level%s.jpg' % i)
 camera.stop_preview()

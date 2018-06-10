@@ -13,5 +13,5 @@ for effect in camera.IMAGE_EFFECTS:
     camera.image_effect=effect
     camera.annotate_text="effect: %s" % effect
     sleep(5)
-    camera.capture('/home/pi/Desktop/effects/type%s.jpg' % effect)
+#    camera.capture('/home/pi/Desktop/effects/type%s.jpg' % effect)
 camera.stop_preview()
